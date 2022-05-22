@@ -6,14 +6,18 @@ import Sidebar from '../Sidebar';
 
 import { Container } from './styles';
 
-const Layout: React.FC = () => {
+interface Props {
+  toggleTheme: () => void;
+}
+
+const Layout: React.FC<Props> = ({ toggleTheme }) => {
 
   const { openWidthMenu } = useContext(SidebarContext);
 
   return (
       <Container mode={openWidthMenu}>
           <Sidebar/>
-          <Navbar/>
+          <Navbar toggleTheme={toggleTheme}/>
           <Main/>
       </Container>
   );

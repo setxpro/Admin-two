@@ -5,15 +5,19 @@ export const Container = styled.div`
     border: 1px solid #3333;
     border-left: 0;
     border-top: 0;
-    background: black;
+    background: ${props => props.theme.colors.primary};
     padding: 1rem;
 
     overflow-y: scroll;
     ::-webkit-scrollbar {
         display: none;
     }
+
+    transition: all 1s ease;
+    color: ${props => props.theme.colors.text};
 `;
 export const Content = styled.div`
    height: 100vh;
-   background: cyan;
+   background: ${props => props.theme.colors.navbar};
+   transition: all 1s ease;
 `;

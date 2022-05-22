@@ -5,7 +5,7 @@ import { IoIosRadioButtonOn } from 'react-icons/io';
 
 export const Container = styled.div`
     grid-area: SB;
-    border: 1px solid #3333;
+    background: ${props => props.theme.colors.sidebar};
     transition: all 1s ease;
 `;
 export const ContentLogoName = styled.div`
@@ -35,7 +35,8 @@ export const ContentImg = styled.div`
         bottom: 0;  
         right: 10px;
         border-radius: 50%;
-        border: 4px solid #FFF;// temporary
+        transition: all 1s ease;
+        border: 4px solid ${props => props.theme.colors.sidebar};// temporary
     }
 `;
 export const ContentName = styled.div`
@@ -45,10 +46,12 @@ export const ContentName = styled.div`
 
    h2 {
     font-size: 1.3em;
+    color: ${props => props.theme.colors.text};
    }
 
    h3 {
     font-size: 1em;
+    color: ${props => props.theme.colors.textLight};
    }
 
 `;
@@ -66,14 +69,16 @@ export const AreaMenu = styled.div`
    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
 
    ::-webkit-scrollbar {
-       width: 3px;
+       /* width: 3px; */
+
+       display: none;
    }
-   ::-webkit-scrollbar-track {
+   /* ::-webkit-scrollbar-track {
        background: rgba(0, 0, 0, 0.2);
    }
    ::-webkit-scrollbar-thumb {
        background: rgba(0, 0, 0, 0.4);
-   }
+   } */
 `;
 
 export const NavArea = styled.nav`
@@ -89,7 +94,7 @@ export const NavArea = styled.nav`
                 margin-bottom: 5px;
                 padding: .2rem 10px;
 
-                color: #333;
+                color: ${props => props.theme.colors.text};
 
                 &:hover {
                     background: darkcyan;
@@ -106,11 +111,11 @@ export const NavArea = styled.nav`
 
 export const BtnCircleVoid = styled(IoIosRadioButtonOff)`
     cursor: pointer;
-    color: #000;
+    color: ${props => props.theme.colors.icons};
     font-size: 1.5rem;
 `;
 export const BtnCircleFull = styled(IoIosRadioButtonOn)`
     cursor: pointer;
-    color: #000;
+    color: ${props => props.theme.colors.icons};
     font-size: 1.5rem;
 `;
