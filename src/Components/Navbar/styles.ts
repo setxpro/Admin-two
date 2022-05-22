@@ -34,11 +34,38 @@ export const ContentAreaRight = styled.div`
   gap: 2rem;
 `;
 
-export const ContentSearchArea = styled.div`
+export const ContentSearchArea = styled.div<{toggle: boolean}>`
+   
+   input {
+        width: ${props => props.toggle ? '400px' : '0px'};
+        transition: all 1s ease;
+        outline: none;
+        border: 0;
+        font-size: 1.3rem;
+        background: transparent;
+        color: ${props => props.theme.colors.text};
+        border-bottom: 1px solid ${props => props.theme.colors.icons};
+    }
 
 `;
 export const ContentBell = styled.div`
-    
+    position: relative;
+
+    ::after {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        content: '1';
+        background: ${props => props.theme.colors.icons};
+        position: absolute;
+        top: -5px;
+        right: -5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: ${props => props.theme.colors.primary};
+    }
 `;
 export const AreaToggleTheme = styled.div``;
 

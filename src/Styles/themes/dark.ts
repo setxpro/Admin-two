@@ -8,5 +8,6 @@ export default {
         text: '#FAFAFA',
         textLight: '#666',
         icons: 'rgb(25, 255, 178)',
+        hover: 'rgba(25, 255, 169,.2)',
     }
 }

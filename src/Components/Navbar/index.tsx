@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import * as C from './styles';
@@ -11,6 +11,11 @@ const Navbar: React.FC<Props> = ({toggleTheme}) => {
 
   const { title } = useContext(ThemeContext);
 
+  const [inputArea, setInputArea] = useState(false);
+  const wrapperInput = () => setInputArea(!inputArea);
+
+  const [search, setSearch] = useState('');
+
   return (
       <C.Container>
         <C.ContentAreaLeft>
@@ -19,9 +24,15 @@ const Navbar: React.FC<Props> = ({toggleTheme}) => {
           <C.CalendarIcon/>
         </C.ContentAreaLeft>
         <C.ContentAreaRight>
-          <C.ContentSearchArea>
-          <input type="search" name="search" placeholder="Search anything..."/>
-          <C.SearchIcon/>
+          <C.ContentSearchArea toggle={inputArea}>
+            <input 
+              type="text" 
+              name="search" 
+              placeholder="Search anything..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}  
+            />
+          <C.SearchIcon onClick={wrapperInput}/>
           </C.ContentSearchArea>
           <C.ContentBell>
             <C.BellIcon/>

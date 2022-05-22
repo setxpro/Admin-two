@@ -6,6 +6,7 @@ import light from './Styles/themes/light';
 import dark from './Styles/themes/dark';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import usePersistedState from './Helpers/usePersistedState';
+import { SidebarActiveProvider } from './Context/SidebarActiveContext';
 
 const App: React.FC = () => {
 
@@ -15,7 +16,9 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <SidebarProvider>
+        <SidebarActiveProvider>
         <Layout toggleTheme={toggleTheme}/>
+        </SidebarActiveProvider>
       </SidebarProvider>
     </ThemeProvider>
   );
