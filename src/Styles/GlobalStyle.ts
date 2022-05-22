@@ -9,5 +9,9 @@ export default createGlobalStyle`
     *,body {
         font-size: 60%+0.8vmin;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        a {
+            text-decoration: none;
+        }
     }
 `;

@@ -59,9 +59,50 @@ export const ContentButtons = styled.div`
 
 `;
 export const AreaMenu = styled.div`
-   
+ 
+   height: 454px;
+   padding: .5rem 0;
+   overflow-y: scroll;
+   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+
+   ::-webkit-scrollbar {
+       width: 3px;
+   }
+   ::-webkit-scrollbar-track {
+       background: rgba(0, 0, 0, 0.2);
+   }
+   ::-webkit-scrollbar-thumb {
+       background: rgba(0, 0, 0, 0.4);
+   }
 `;
 
+export const NavArea = styled.nav`
+   
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
+
+            a {
+                font-size: 1rem;
+                margin-bottom: 5px;
+                padding: .2rem 10px;
+
+                color: #333;
+
+                &:hover {
+                    background: darkcyan;
+                }
+            
+                li {
+                    list-style: none;
+                
+                }
+
+            }
+    }
+`;
 
 export const BtnCircleVoid = styled(IoIosRadioButtonOff)`
     cursor: pointer;
